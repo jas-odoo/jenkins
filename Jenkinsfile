@@ -18,7 +18,7 @@ pipeline {
             steps {
                 //def scannerHome = tool 'SonarScanner 4.0';
                 withSonarQubeEnv('sonarqube') {
-                    sh "/var/jenkins_home/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner"
+                    sh "/var/jenkins_home/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner -Dsonar.projectKey=${ProjectNameSonarqube} Dsonar.sources=/var/jenkins_home/workspace/test_pipeline/hello"
                 }
                 echo "Static Code Analysis Successful"
             }

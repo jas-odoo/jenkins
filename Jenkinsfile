@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone SCM') { 
             steps {
-            	git 'https://github.com/jas-odoo/jenkins.git'
+            	git '${GitRepoURL}'
                 echo "Cloning Successful"
             }
         }

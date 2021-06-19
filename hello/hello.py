@@ -1,2 +1,2 @@
 import os
-print(f"This is {os.name}")
+print(f"This is a {os.name}")

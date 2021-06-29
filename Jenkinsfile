@@ -24,7 +24,9 @@ pipeline {
             }
         }
         stage('Artifact Upload') {
-            nexusArtifactUploader artifacts: [[artifactId: 'hello-python', classifier: '', file: '/var/jenkins_home/workspace/test_pipeline/dist/hello-1.0-py3-none-any.whl', type: 'whl']], credentialsId: 'nexus-cred', groupId: 'test', nexusUrl: 'nexus:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: '2'
+            steps {
+                nexusArtifactUploader artifacts: [[artifactId: 'hello-python', classifier: '', file: '/var/jenkins_home/workspace/test_pipeline/dist/hello-1.0-py3-none-any.whl', type: 'whl']], credentialsId: 'nexus-cred', groupId: 'test', nexusUrl: 'nexus:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: '2'
+            }
         }
     }
 }
